@@ -69,6 +69,28 @@ header {
 	width: 95vw;
 }
 
+.dashboard {
+	display: grid;
+	grid-template-columns: 75px 1fr 1fr;
+	grid-template-rows: 75px 1fr 1fr;
+}
+
+.headline {
+	justify-self: start;
+}
+
+.dashboard-search {
+	width: 100px;
+	height: 75px;
+	background-color: aquamarine;
+	justify-self: end;
+}
+
+.alert {
+	justify-self: stretch;
+	align-self: center;
+}
+
 /* SVG Styles */
 
 .social-image {
@@ -104,7 +126,7 @@ header {
 	}
 
 	.widget-container-full {
-		width: 95vw;
+		width: 90vw;
 	}
 
 	.widget-container-half {
