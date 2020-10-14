@@ -21,15 +21,25 @@
 header {
 	grid-area: header;
 	display: grid;
-	grid-template-columns: 1fr 25% 15% 30%;
+	grid-template-columns: 1.5fr 0.6fr 1fr;
 	grid-template-rows: auto;
-	background-color: #6e659e;
+	background-color: #7477bf;
 	color: #ffffff;
 }
 
 .nav-img {
 	width: 25px;
 	height: 25px;
+}
+
+.profile-img-container {
+	display: grid;
+	grid-template-columns: 0.3fr 1fr;
+	grid-template-rows: auto;
+	border-left: rgba(80, 78, 78, 0.5) 1px solid;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-left: 5px;
 }
 
 .profile-image {
@@ -41,8 +51,9 @@ header {
 }
 
 .app-title {
-	justify-self: center;
+	justify-self: start;
 	align-self: center;
+	padding-left: 10px;
 	font-size: 20px;
 	font-weight: 100;
 }
@@ -54,7 +65,7 @@ header {
 	grid-template-rows: 40px;
 	align-items: center;
 	justify-items: center;
-	background-color: #3d2b5a;
+	background-color: #4d4c72;
 }
 
 .profile-name {
@@ -105,10 +116,12 @@ header {
 }
 
 .bell {
-	width: 20px;
-	height: 20px;
+	width: 35px;
+	height: 35px;
 	align-self: center;
 	justify-self: end;
+	margin-right: 5px;
+	padding: 5px;
 }
 
 .st0 {
