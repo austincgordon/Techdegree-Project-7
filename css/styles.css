@@ -21,7 +21,7 @@
 header {
 	grid-area: header;
 	display: grid;
-	grid-template-columns: 1.5fr 0.6fr 1fr;
+	grid-template-columns: 1.5fr 0.6fr 1.5fr;
 	grid-template-rows: auto;
 	background-color: #7477bf;
 	color: #ffffff;
@@ -120,8 +120,7 @@ header {
 	height: 35px;
 	align-self: center;
 	justify-self: end;
-	margin-right: 5px;
-	padding: 5px;
+	margin: 0;
 }
 
 .st0 {
