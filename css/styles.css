@@ -7,6 +7,10 @@
 
 /* Page Styles */
 
+body {
+	color: #808080;
+}
+
 .grid-container {
 	display: grid;
 	grid-template-columns: 100%;
@@ -89,29 +93,62 @@ header {
 
 .dashboard {
 	display: grid;
-	grid-template-columns: 0.5fr 0.8fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-columns: 0.7fr 1.3fr;
+	grid-template-rows: 60px 100px;
+	grid-template-areas:
+		'headline search'
+		'alert alert';
 }
 
 .headline {
-	justify-self: start;
+	grid-area: headline;
+	justify-self: center;
+	align-self: center;
 }
 
 .dashboard-search {
-	width: 100px;
-	height: 75px;
-	justify-self: stretch;
+	grid-area: search;
+	justify-self: end;
+	align-self: center;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 100%;
+	background-color: #fbfbfb;
+	width: 100%;
+	height: 100%;
+	border: 1px solid darkgrey;
+}
+
+.search-bar {
+	margin-right: 15px;
+	justify-self: end;
 	align-self: center;
 }
 
 .alert {
+	grid-area: alert;
+	align-self: center;
 	background-color: #7477bf;
 	color: white;
+	height: 50px;
 	border-radius: 4px;
-	justify-self: stretch;
+}
+
+.alert-banner {
+	display: grid;
+	grid-template-columns: 1fr 0.1fr;
+	grid-template-rows: auto;
+}
+
+.alert-banner-message {
+	justify-self: start;
 	align-self: center;
-	height: 60px;
-	width: 350px;
+	padding-left: 10px;
+}
+
+.alert-banner-close {
+	justify-self: center;
+	align-self: center;
 }
 
 /* SVG Styles */

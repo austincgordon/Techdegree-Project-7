@@ -3,9 +3,8 @@ const alertBanner = document.getElementById('alert');
 // Creates the HTML for the banner
 alertBanner.innerHTML = `
 <div class="alert-banner">
-<p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
-to complete</p>
-<p class="alert-banner-close">x</p>
+<p class="alert-banner-message"><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
+to complete</p><p class="alert-banner-close">x</p>
 </div>
 `;
 
@@ -36,6 +35,7 @@ let trafficData = {
 	],
 	datasets: [
 		{
+			label: 'TRAFFIC',
 			data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
 			backgroundColor: 'rgba(116, 119, 191, .3)',
 			borderWidth: 1,
