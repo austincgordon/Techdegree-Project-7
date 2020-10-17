@@ -8,7 +8,11 @@
 /* Page Styles */
 
 body {
-	color: #808080;
+	color: rgba(68, 68, 68, 0.6);
+}
+
+h4 {
+	font-size: 15px;
 }
 
 .grid-container {
@@ -88,7 +92,9 @@ header {
 
 .widget-container-full,
 .widget-container-half {
-	width: 95vw;
+	width: 100vw;
+	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
+	padding-bottom: 15px;
 }
 
 .dashboard {
@@ -116,7 +122,8 @@ header {
 	background-color: #fbfbfb;
 	width: 100%;
 	height: 100%;
-	border: 1px solid darkgrey;
+	border-left: 1px solid rgba(80, 78, 78, 0.2);
+	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
 }
 
 .search-bar {
@@ -172,31 +179,168 @@ header {
 
 .traffic {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 60px 1fr;
+	grid-template-columns: 100px 1fr;
+	grid-template-rows: auto;
 
 	grid-template-areas:
 		'header nav'
 		'traffic-chart traffic-chart';
 }
 
-.traffic-header {
+.chart-header {
 	grid-area: header;
+	padding-left: 10px;
 	justify-self: start;
 	align-self: center;
 }
 
 .traffic-nav {
 	grid-area: nav;
+	padding-right: 15px;
 	list-style-type: none;
-	justify-self: center;
+	justify-self: end;
 	align-self: center;
+}
+
+.traffic-nav-link {
+	display: inline;
+	padding: 6px 10px;
+	text-align: center;
+}
+
+.traffic-nav-link + .active {
+	background-color: rgba(42, 165, 42, 0.6);
+	color: white;
+	text-align: center;
+	border-radius: 50px;
 }
 
 #traffic-chart {
 	grid-area: traffic-chart;
+	justify-self: center;
+	align-self: center;
 	width: 100%;
 	height: 100%;
+}
+
+#daily-chart {
+	justify-self: center;
+	align-self: center;
+	width: 100%;
+	height: 100%;
+}
+
+#mobile-chart {
+	justify-self: center;
+	align-self: center;
+	width: 100%;
+	height: 100%;
+}
+
+.social-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
+	padding-bottom: 15px;
+
+	grid-template-areas:
+		'social-header'
+		'twitter'
+		'facebook'
+		'google';
+}
+
+.social-image {
+	grid-area: social-icon;
+	background-color: #7477bf;
+	border-radius: 50%;
+	width: 75px;
+	height: 75px;
+	justify-self: center;
+	align-self: center;
+}
+
+.social-name {
+	grid-area: name;
+	color: #7477bf;
+	display: inline;
+	align-self: flex-start;
+	justify-self: start;
+}
+
+.social-stats {
+	grid-area: stats;
+	color: rgba(68, 68, 68, 0.8);
+	font-weight: 300;
+	font-size: 45px;
+	display: inline;
+	align-self: center;
+	justify-self: start;
+}
+
+.social-header {
+	grid-area: social-header;
+	padding-left: 10px;
+	justify-self: start;
+	align-self: center;
+}
+
+.twitter-box {
+	grid-area: twitter;
+	justify-self: center;
+	align-self: center;
+	width: 60vw;
+	padding: 12px 15px;
+	margin-bottom: 15px;
+	background-color: #fbfbfb;
+	border: 1px solid rgba(80, 78, 78, 0.2);
+
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-rows: 35px 50px;
+
+	grid-template-areas:
+		'social-icon name'
+		'social-icon stats';
+}
+
+.facebook-box {
+	grid-area: facebook;
+	justify-self: center;
+	align-self: center;
+	width: 60vw;
+	padding: 12px 15px;
+	margin-bottom: 15px;
+	background-color: #fbfbfb;
+	border: 1px solid rgba(80, 78, 78, 0.2);
+
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-rows: 35px 50px;
+
+	grid-template-areas:
+		'social-icon name'
+		'social-icon stats';
+}
+
+.google-box {
+	grid-area: google;
+	justify-self: center;
+	align-self: center;
+	width: 60vw;
+	padding: 12px 15px;
+	margin-bottom: 15px;
+	background-color: #fbfbfb;
+	border: 1px solid rgba(80, 78, 78, 0.2);
+
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-rows: 35px 50px;
+
+	grid-template-areas:
+		'social-icon name'
+		'social-icon stats';
 }
 
 /* Media Queries */
