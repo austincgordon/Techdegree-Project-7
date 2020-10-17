@@ -170,6 +170,35 @@ header {
 	fill: #ffffff;
 }
 
+.traffic {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 60px 1fr;
+
+	grid-template-areas:
+		'header nav'
+		'traffic-chart traffic-chart';
+}
+
+.traffic-header {
+	grid-area: header;
+	justify-self: start;
+	align-self: center;
+}
+
+.traffic-nav {
+	grid-area: nav;
+	list-style-type: none;
+	justify-self: center;
+	align-self: center;
+}
+
+#traffic-chart {
+	grid-area: traffic-chart;
+	width: 100%;
+	height: 100%;
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {
