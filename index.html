@@ -11,6 +11,10 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 	</head>
 
 	<body class="grid-container">
@@ -65,7 +69,8 @@
 			<div class="dashboard">
 				<h2 class="headline">Dashboard</h2>
 				<span class="dashboard-search">
-					<input type="search" placeholder="Search..." class="search-bar" />
+					<input type="search" placeholder="Search" class="search-bar" />
+					<a class="search-icon"><i class="fa fa-search icon"></i></a>
 				</span>
 				<div class="alert" id="alert"></div>
 			</div>
@@ -234,7 +239,7 @@
 				<div class="activity-container">
 					<img src="images/member-1.jpg" class="member-image" alt="Carly Simpson" />
 					<p class="activity-status">
-						Carly Simpson commented on YourApp's SEO tips
+						Carly Simpson commented on <strong>YourApp's SEO tips</strong>
 					</p>
 					<p class="activity-time">2 hours ago</p>
 					<p class="arrow">></p>
@@ -243,7 +248,7 @@
 				<div class="activity-container">
 					<img src="images/member-2.jpg" class="member-image" alt="Dane Prescott" />
 					<p class="activity-status">
-						Dane Prescott liked the post Facebook's Changes for 2016
+						Dane Prescott liked the post <strong>Facebook's Changes for 2016</strong>
 					</p>
 					<p class="activity-time">3 hours ago</p>
 					<p class="arrow">></p>
@@ -252,7 +257,7 @@
 				<div class="activity-container">
 					<img src="images/member-3.jpg" class="member-image" alt="Mollie Fisher" />
 					<p class="activity-status">
-						Mollie Fisher commented on Facebook's Changes for 2016
+						Mollie Fisher commented on <strong>Facebook's Changes for 2016</strong>
 					</p>
 					<p class="activity-time">5 hours ago</p>
 					<p class="arrow">></p>
@@ -260,7 +265,9 @@
 
 				<div class="activity-container">
 					<img src="images/member-4.jpg" class="member-image" alt="Brock McDaniel" />
-					<p class="activity-status">Brock McDaniel posted YourApp's SEO Tips</p>
+					<p class="activity-status">
+						Brock McDaniel posted <strong>YourApp's SEO Tips</strong>
+					</p>
 					<p class="activity-time">1 day ago</p>
 					<p class="arrow">></p>
 				</div>
@@ -286,38 +293,42 @@
 			</section>
 
 			<section class="settings">
-				<h3>Settings</h3>
+				<h4 class="settings-header">SETTINGS</h4>
 
-				<p>Send Email Notifications</p>
-				<label class="switch-ios switch-light" onclick="">
-					<input type="checkbox" />
-					<span>
-						<span>Off</span>
-						<span>On</span>
-						<a></a>
-					</span>
-				</label>
+				<div class="send-email">
+					<p>Send Email Notifications</p>
+					<label class="switch-ios switch-light" onclick="">
+						<input type="checkbox" />
+						<span>
+							<span>Off</span>
+							<span>On</span>
+							<a></a>
+						</span>
+					</label>
+				</div>
 
-				<p>Set Profile to Public</p>
-				<label class="switch-ios switch-light" onclick="">
-					<input type="checkbox" />
-					<span>
-						<span>Off</span>
-						<span>On</span>
-						<a></a>
-					</span>
-				</label>
+				<div class="set-profile">
+					<p>Set Profile to Public</p>
+					<label class="switch-ios switch-light" onclick="">
+						<input type="checkbox" />
+						<span>
+							<span>Off</span>
+							<span>On</span>
+							<a></a>
+						</span>
+					</label>
+				</div>
 
-				<select class="form=field" id="timezone">
-					<option disabled selected>Select a Timezone</option>
+				<select class="form-field" id="timezone">
+					<option disabled selected>Select Timezone</option>
 					<option>Eastern</option>
 					<option>Central</option>
 					<option>Mountain Time</option>
 				</select>
 
 				<div class="settings-button">
-					<button class="button-primary">Save</button>
-					<button class="button-disabled">Cancel</button>
+					<button class="button-primary">SAVE</button>
+					<button class="button-disabled">CANCEL</button>
 				</div>
 			</section>
 		</main>

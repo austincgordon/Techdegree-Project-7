@@ -112,8 +112,18 @@ header {
 	align-self: center;
 }
 
+.icon {
+	position: absolute;
+	color: #7477bf;
+	top: 17%;
+	right: 15px;
+	padding: 10px;
+	min-width: 40px;
+}
+
 .dashboard-search {
 	grid-area: search;
+	position: relative;
 	justify-self: end;
 	align-self: center;
 	display: grid;
@@ -128,17 +138,28 @@ header {
 
 .search-bar {
 	margin-right: 15px;
+	padding-left: 10px;
 	justify-self: end;
 	align-self: center;
+	border: 1px solid rgba(80, 78, 78, 0.3);
+	width: 250px;
+	height: 35px;
+	border-radius: 5px;
+}
+
+.search-bar::placeholder {
+	color: rgba(80, 78, 78, 0.3);
 }
 
 .alert {
 	grid-area: alert;
+	justify-self: center;
 	align-self: center;
 	background-color: #7477bf;
 	color: white;
 	height: 50px;
 	border-radius: 4px;
+	width: 90vw;
 }
 
 .alert-banner {
@@ -171,10 +192,16 @@ header {
 	align-self: center;
 	justify-self: end;
 	margin: 0;
+	transition: transform 0.7s ease-in-out;
+	transform-origin: center;
 }
 
 .st0 {
 	fill: #ffffff;
+}
+
+.bell:hover {
+	transform: scale(1.2);
 }
 
 .traffic {
@@ -427,7 +454,8 @@ header {
 
 .activity-status {
 	grid-area: status;
-	font-weight: 500;
+	font-weight: 400;
+	line-height: 1.2;
 	justify-self: start;
 	align-self: center;
 }
@@ -471,12 +499,12 @@ header {
 
 .form-field {
 	width: 90vw;
-	height: 7vh;
+	height: 50px;
 	padding-left: 10px;
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	justify-self: start;
+	justify-self: center;
 	align-self: center;
 	background-color: #fbfbfb;
 	border: 1px solid rgba(80, 78, 78, 0.2);
@@ -484,32 +512,90 @@ header {
 
 .form-area {
 	width: 90vw;
-	height: 20vh;
+	height: 150px;
 	padding-left: 10px;
 	padding-top: 10px;
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	justify-self: start;
+	resize: none;
+	justify-self: center;
 	align-self: center;
 	background-color: #fbfbfb;
 	border: 1px solid rgba(80, 78, 78, 0.2);
 }
 
+.form-field::placeholder,
+.form-area::placeholder {
+	color: rgba(80, 78, 78, 0.3);
+}
+
 .button-primary {
 	width: 90vw;
-	height: 9vh;
+	height: 80px;
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	justify-self: start;
+	justify-self: center;
 	align-self: center;
 	background-color: #7477bf;
 	color: white;
 	border-radius: 5px;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+	border: none;
+	cursor: pointer;
+}
+
+.button-disabled {
+	width: 90vw;
+	height: 80px;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	justify-self: center;
+	align-self: center;
+	background-color: rgba(121, 121, 121, 0.6);
+	color: white;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.settings {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+}
+
+.settings-header {
+	padding-left: 10px;
+	justify-self: start;
+	align-self: center;
+}
+
+.settings-button {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+}
+
+.send-email {
+	display: grid;
+	padding-left: 30px;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-rows: auto;
+	align-items: center;
+}
+
+.set-profile {
+	display: grid;
+	padding-left: 30px;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-rows: auto;
+	align-items: center;
+}
+
+#timezone {
+	color: rgba(80, 78, 78, 0.3);
 }
 
 /* Media Queries */
@@ -524,6 +610,19 @@ header {
 
 	.main-container {
 		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+
+		grid-template-areas:
+			'dashboard'
+			'traffic'
+			'traffic-and-users'
+			'social-stats';
+	}
+
+	.navigation {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 60px);
 	}
 
 	.widget-container-full {
@@ -534,20 +633,49 @@ header {
 		width: 45vw;
 	}
 
-	.social-container,
+	.dashboard {
+		grid-area: dashboard;
+	}
 	.traffic {
-		grid-column: 1 / span 2;
+		grid-area: traffic;
 	}
 
-	.members,
-	.message,
+	.traffic-and-users {
+		display: grid;
+		grid-area: traffic-and-users;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
 	.daily {
-		grid-column: 1 / span 1;
+		border-right: 1px solid rgba(80, 78, 78, 0.2);
+	}
+}
+
+@media (max-width: 1023px, min-width: 1024px) {
+	/* .social-container {
+		grid-area: social-stats;
+		grid-template-columns: 0.5fr 0.5fr 0.5fr;
+		grid-template-rows: 45px 150px;
+
+		grid-template-areas:
+			'social-header social-header social-header'
+			'twitter-box facebook-box google-box';
 	}
 
-	.mobile-users,
-	.recent-activity,
-	.settings {
-		grid-column: 2 / span 1;
+	.social-header {
+		grid-area: social-header;
 	}
+
+	.twitter-box {
+		grid-area: twitter-box;
+	}
+
+	.facebook-box {
+		grid-area: facebook-box;
+	}
+
+	.google-box {
+		grid-area: google-box;
+	} */
 }
