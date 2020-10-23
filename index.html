@@ -18,9 +18,16 @@
 	</head>
 
 	<body class="grid-container">
+		<span id="notification-window">
+			<ul>
+				<li>Profile completion: 75%</li>
+				<li>Update your email address</li>
+			</ul>
+		</span>
+
 		<header id="header">
 			<h1 class="app-title"><strong>Your</strong>App&trade;</h1>
-			<div class="bell" style="width: 35px; height: 35px">
+			<div class="bell" id="bell" style="width: 35px; height: 35px">
 				<!-- Bell Icon -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -80,7 +87,7 @@
 				<ul class="traffic-nav">
 					<li class="traffic-nav-link">Hourly</li>
 					<li class="traffic-nav-link">Daily</li>
-					<li class="traffic-nav-link active">Weekly</li>
+					<li class="traffic-nav-link">Weekly</li>
 					<li class="traffic-nav-link">Monthly</li>
 				</ul>
 
@@ -201,136 +208,148 @@
 				</div>
 			</div>
 
-			<section class="new-members">
-				<h4 class="member-header">NEW MEMBERS</h4>
+			<div class="members-and-activity">
+				<section class="new-members">
+					<h4 class="member-header">NEW MEMBERS</h4>
 
-				<div class="new-members-container">
-					<img src="images/member-1.jpg" class="member-image" alt="Carly Simpson" />
-					<p class="member-name">Carly Simpson</p>
-					<a href="#" class="member-email">carlyraesimpson@coolmail.com</a>
-					<p class="member-date">10/10/2020</p>
-				</div>
+					<div class="new-members-container">
+						<img src="images/member-1.jpg" class="member-image" alt="Carly Simpson" />
+						<p class="member-name">Carly Simpson</p>
+						<a href="#" class="member-email">carlyraesimpson@coolmail.com</a>
+						<p class="member-date">10/10/2020</p>
+					</div>
 
-				<div class="new-members-container">
-					<img src="images/member-2.jpg" class="member-image" alt="Dane Prescott" />
-					<p class="member-name">Dane Prescott</p>
-					<a href="#" class="member-email">gothunderbirds@alphakai.com</a>
-					<p class="member-date">10/10/2020</p>
-				</div>
+					<div class="new-members-container">
+						<img src="images/member-2.jpg" class="member-image" alt="Dane Prescott" />
+						<p class="member-name">Dane Prescott</p>
+						<a href="#" class="member-email">gothunderbirds@alphakai.com</a>
+						<p class="member-date">10/10/2020</p>
+					</div>
 
-				<div class="new-members-container">
-					<img src="images/member-3.jpg" class="member-image" alt="Mollie Fisher" />
-					<p class="member-name">Mollie Fisher</p>
-					<a href="#" class="member-email">molliegoround@infinitydds.com</a>
-					<p class="member-date">10/10/2020</p>
-				</div>
+					<div class="new-members-container">
+						<img src="images/member-3.jpg" class="member-image" alt="Mollie Fisher" />
+						<p class="member-name">Mollie Fisher</p>
+						<a href="#" class="member-email">molliegoround@infinitydds.com</a>
+						<p class="member-date">10/10/2020</p>
+					</div>
 
-				<div class="new-members-container">
-					<img src="images/member-4.jpg" class="member-image" alt="Brock McDaniel" />
-					<p class="member-name">Brock McDaniel</p>
-					<a href="#" class="member-email"> brockyroad@sweetcream.com</a>
-					<p class="member-date">10/10/2020</p>
-				</div>
-			</section>
+					<div class="new-members-container">
+						<img
+							src="images/member-4.jpg"
+							class="member-image"
+							alt="Brock McDaniel"
+						/>
+						<p class="member-name">Brock McDaniel</p>
+						<a href="#" class="member-email"> brockyroad@sweetcream.com</a>
+						<p class="member-date">10/10/2020</p>
+					</div>
+				</section>
 
-			<section class="recent-activity">
-				<h4 class="activity-header">RECENT ACTIVITY</h4>
+				<section class="recent-activity">
+					<h4 class="activity-header">RECENT ACTIVITY</h4>
 
-				<div class="activity-container">
-					<img src="images/member-1.jpg" class="member-image" alt="Carly Simpson" />
-					<p class="activity-status">
-						Carly Simpson commented on <strong>YourApp's SEO tips</strong>
-					</p>
-					<p class="activity-time">2 hours ago</p>
-					<p class="arrow">></p>
-				</div>
+					<div class="activity-container">
+						<img src="images/member-1.jpg" class="member-image" alt="Carly Simpson" />
+						<p class="activity-status">
+							Carly Simpson commented on <strong>YourApp's SEO tips</strong>
+						</p>
+						<p class="activity-time">2 hours ago</p>
+						<p class="arrow">></p>
+					</div>
 
-				<div class="activity-container">
-					<img src="images/member-2.jpg" class="member-image" alt="Dane Prescott" />
-					<p class="activity-status">
-						Dane Prescott liked the post <strong>Facebook's Changes for 2016</strong>
-					</p>
-					<p class="activity-time">3 hours ago</p>
-					<p class="arrow">></p>
-				</div>
+					<div class="activity-container">
+						<img src="images/member-2.jpg" class="member-image" alt="Dane Prescott" />
+						<p class="activity-status">
+							Dane Prescott liked the post <strong>Facebook's Changes for 2016</strong>
+						</p>
+						<p class="activity-time">3 hours ago</p>
+						<p class="arrow">></p>
+					</div>
 
-				<div class="activity-container">
-					<img src="images/member-3.jpg" class="member-image" alt="Mollie Fisher" />
-					<p class="activity-status">
-						Mollie Fisher commented on <strong>Facebook's Changes for 2016</strong>
-					</p>
-					<p class="activity-time">5 hours ago</p>
-					<p class="arrow">></p>
-				</div>
+					<div class="activity-container">
+						<img src="images/member-3.jpg" class="member-image" alt="Mollie Fisher" />
+						<p class="activity-status">
+							Mollie Fisher commented on <strong>Facebook's Changes for 2016</strong>
+						</p>
+						<p class="activity-time">5 hours ago</p>
+						<p class="arrow">></p>
+					</div>
 
-				<div class="activity-container">
-					<img src="images/member-4.jpg" class="member-image" alt="Brock McDaniel" />
-					<p class="activity-status">
-						Brock McDaniel posted <strong>YourApp's SEO Tips</strong>
-					</p>
-					<p class="activity-time">1 day ago</p>
-					<p class="arrow">></p>
-				</div>
-			</section>
+					<div class="activity-container">
+						<img
+							src="images/member-4.jpg"
+							class="member-image"
+							alt="Brock McDaniel"
+						/>
+						<p class="activity-status">
+							Brock McDaniel posted <strong>YourApp's SEO Tips</strong>
+						</p>
+						<p class="activity-time">1 day ago</p>
+						<p class="arrow">></p>
+					</div>
+				</section>
+			</div>
 
-			<section class="message">
-				<h4 class="message-header">MESSAGE USER</h4>
+			<div class="message-and-settings">
+				<section class="message">
+					<h4 class="message-header">MESSAGE USER</h4>
 
-				<form class="message-container">
-					<input
-						type="text"
-						placeholder="Search for user"
-						class="form-field"
-						id="userField"
-					/>
-					<textarea
-						placeholder="Message for user"
-						class="form-area"
-						id="messageField"
-					></textarea>
-					<button class="button-primary" id="send">SEND</button>
-				</form>
-			</section>
+					<form class="message-container">
+						<input
+							type="text"
+							placeholder="Search for user"
+							class="form-field"
+							id="userField"
+						/>
+						<textarea
+							placeholder="Message for user"
+							class="form-area"
+							id="messageField"
+						></textarea>
+						<button class="button-primary" id="send">SEND</button>
+					</form>
+				</section>
 
-			<section class="settings">
-				<h4 class="settings-header">SETTINGS</h4>
+				<section class="settings">
+					<h4 class="settings-header">SETTINGS</h4>
 
-				<div class="send-email">
-					<p>Send Email Notifications</p>
-					<label class="switch-ios switch-light" onclick="">
-						<input type="checkbox" />
-						<span>
-							<span>Off</span>
-							<span>On</span>
-							<a></a>
-						</span>
-					</label>
-				</div>
+					<div class="send-email">
+						<p>Send Email Notifications</p>
+						<label class="switch-ios switch-light" onclick="">
+							<input type="checkbox" />
+							<span>
+								<span>Off</span>
+								<span>On</span>
+								<a></a>
+							</span>
+						</label>
+					</div>
 
-				<div class="set-profile">
-					<p>Set Profile to Public</p>
-					<label class="switch-ios switch-light" onclick="">
-						<input type="checkbox" />
-						<span>
-							<span>Off</span>
-							<span>On</span>
-							<a></a>
-						</span>
-					</label>
-				</div>
+					<div class="set-profile">
+						<p>Set Profile to Public</p>
+						<label class="switch-ios switch-light" onclick="">
+							<input type="checkbox" />
+							<span>
+								<span>Off</span>
+								<span>On</span>
+								<a></a>
+							</span>
+						</label>
+					</div>
 
-				<select class="form-field" id="timezone">
-					<option disabled selected>Select Timezone</option>
-					<option>Eastern</option>
-					<option>Central</option>
-					<option>Mountain Time</option>
-				</select>
+					<select class="form-field" id="timezone">
+						<option disabled selected>Select Timezone</option>
+						<option>Eastern</option>
+						<option>Central</option>
+						<option>Mountain Time</option>
+					</select>
 
-				<div class="settings-button">
-					<button class="button-primary">SAVE</button>
-					<button class="button-disabled">CANCEL</button>
-				</div>
-			</section>
+					<div class="settings-button">
+						<button class="button-primary" id="save">SAVE</button>
+						<button class="button-disabled" id="cancel">CANCEL</button>
+					</div>
+				</section>
+			</div>
 		</main>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>

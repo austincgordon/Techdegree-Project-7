@@ -35,6 +35,18 @@ header {
 	color: #ffffff;
 }
 
+#notification-window {
+	width: auto;
+	height: 150px;
+	color: white;
+	padding: 10px;
+	right: 200px;
+	overflow: visible;
+	background: rgb(95, 163, 93);
+	position: absolute;
+	border: 3px solid white;
+}
+
 .nav-img {
 	width: 25px;
 	height: 25px;
@@ -92,14 +104,15 @@ header {
 
 .widget-container-full,
 .widget-container-half {
-	width: 100vw;
+	width: 95vw;
 	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
-	padding-bottom: 15px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
 
 .dashboard {
 	display: grid;
-	grid-template-columns: 0.7fr 1.3fr;
+	grid-template-columns: 160px 1.3fr;
 	grid-template-rows: 60px 100px;
 	grid-template-areas:
 		'headline search'
@@ -159,12 +172,12 @@ header {
 	color: white;
 	height: 50px;
 	border-radius: 4px;
-	width: 90vw;
+	width: 95vw;
 }
 
 .alert-banner {
 	display: grid;
-	grid-template-columns: 1fr 0.1fr;
+	grid-template-columns: 1fr 40px;
 	grid-template-rows: auto;
 }
 
@@ -498,7 +511,7 @@ header {
 }
 
 .form-field {
-	width: 90vw;
+	width: 75%;
 	height: 50px;
 	padding-left: 10px;
 	margin-left: 10px;
@@ -511,7 +524,7 @@ header {
 }
 
 .form-area {
-	width: 90vw;
+	width: 75%;
 	height: 150px;
 	padding-left: 10px;
 	padding-top: 10px;
@@ -531,7 +544,7 @@ header {
 }
 
 .button-primary {
-	width: 90vw;
+	width: 75%;
 	height: 80px;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -546,7 +559,7 @@ header {
 }
 
 .button-disabled {
-	width: 90vw;
+	width: 75%;
 	height: 80px;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -626,35 +639,54 @@ header {
 	}
 
 	.widget-container-full {
-		width: 90vw;
+		width: 100vw;
+		padding: 10px;
 	}
 
 	.widget-container-half {
-		width: 45vw;
+		width: 50vw;
+		padding: 10px;
 	}
 
 	.dashboard {
 		grid-area: dashboard;
 	}
 	.traffic {
+		padding: 0 10px;
 		grid-area: traffic;
 	}
 
 	.traffic-and-users {
 		display: grid;
+		padding: 0 10px;
 		grid-area: traffic-and-users;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
 	}
 
 	.daily {
-		border-right: 1px solid rgba(80, 78, 78, 0.2);
+		border-right: rgba(80, 78, 78, 0.2) 1px solid;
 	}
 }
 
-@media (max-width: 1023px, min-width: 1024px) {
-	/* .social-container {
+@media (min-width: 1024px) {
+	.alert {
+		width: 95%;
+	}
+
+	.widget-container-full {
+		width: 100vw;
+		padding: 10px;
+	}
+
+	.widget-container-half {
+		width: 50vw;
+		padding: 10px;
+	}
+
+	.social-container {
 		grid-area: social-stats;
+		padding: 0 10px;
 		grid-template-columns: 0.5fr 0.5fr 0.5fr;
 		grid-template-rows: 45px 150px;
 
@@ -669,13 +701,111 @@ header {
 
 	.twitter-box {
 		grid-area: twitter-box;
+		width: 300px;
 	}
 
 	.facebook-box {
 		grid-area: facebook-box;
+		width: 300px;
 	}
 
 	.google-box {
 		grid-area: google-box;
-	} */
+		width: 300px;
+	}
+
+	.members-and-activity {
+		padding: 0 10px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	.new-members {
+		border-right: rgba(80, 78, 78, 0.2) 1px solid;
+	}
+
+	.message-and-settings {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	.message {
+		padding: 0 10px;
+		margin-bottom: 0;
+		border-right: rgba(80, 78, 78, 0.2) 1px solid;
+		border-bottom: none;
+	}
+
+	.message-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}
+
+	.form-area,
+	.form-field {
+		width: 95%;
+		justify-self: start;
+	}
+
+	#send {
+		width: 95%;
+		justify-self: start;
+	}
+
+	.settings {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		padding: 0 10px;
+
+		grid-template-areas:
+			'header header'
+			'send-email send-email'
+			'set-profile set-profile'
+			'timezone timezone'
+			'button button';
+	}
+
+	.settings-header {
+		grid-area: header;
+	}
+
+	.send-email {
+		grid-area: send-email;
+		padding-left: 10px;
+	}
+
+	.set-profile {
+		grid-area: set-profile;
+		padding-left: 10px;
+	}
+
+	#timezone {
+		grid-area: timezone;
+		justify-self: start;
+		margin-left: 10px;
+		width: 97%;
+	}
+
+	.settings-button {
+		display: grid;
+		grid-area: button;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	#save {
+		justify-self: start;
+		align-self: center;
+		width: 95%;
+	}
+
+	#cancel {
+		justify-self: start;
+		align-self: center;
+		width: 95%;
+	}
 }
