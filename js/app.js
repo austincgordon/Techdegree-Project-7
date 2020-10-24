@@ -1,5 +1,4 @@
 const alertBanner = document.getElementById('alert');
-const bell = document.getElementById('bell');
 
 // Creates the HTML for the banner
 alertBanner.innerHTML = `
@@ -9,18 +8,12 @@ to complete</p><p class="alert-banner-close">x</p>
 </div>
 `;
 
-// closes the banner when 'x' is clicked
+// Closes the banner when the 'x' is clicked
 alertBanner.addEventListener('click', (e) => {
 	const element = e.target;
 	if (element.classList.contains('alert-banner-close')) {
 		alertBanner.style.display = 'none';
 	}
-});
-
-const notificationEnable = document.getElementById('bell');
-
-notificationEnable.addEventListener('click', (e) => {
-	const pageBody = document.getElementsByClassName('grid-container')[0];
 });
 
 // Traffic Chart
@@ -43,75 +36,6 @@ let trafficDataWeekly = {
 	datasets: [
 		{
 			data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-			backgroundColor: 'rgba(116, 119, 191, .3)',
-			borderWidth: 1,
-		},
-	],
-};
-
-let trafficDataHourly = {
-	labels: [
-		'16-22',
-		'23-29',
-		'30-5',
-		'6-12',
-		'13-19',
-		'20-26',
-		'27-3',
-		'4-10',
-		'11-17',
-		'18-24',
-		'25-31',
-	],
-	datasets: [
-		{
-			data: [250, 550, 800, 1400, 1000, 1250, 1600, 600, 2250, 1100, 2000],
-			backgroundColor: 'rgba(116, 119, 191, .3)',
-			borderWidth: 1,
-		},
-	],
-};
-
-let trafficDataDaily = {
-	labels: [
-		'16-22',
-		'23-29',
-		'30-5',
-		'6-12',
-		'13-19',
-		'20-26',
-		'27-3',
-		'4-10',
-		'11-17',
-		'18-24',
-		'25-31',
-	],
-	datasets: [
-		{
-			data: [50, 150, 300, 1000, 700, 1250, 900, 600, 1500, 1900, 800],
-			backgroundColor: 'rgba(116, 119, 191, .3)',
-			borderWidth: 1,
-		},
-	],
-};
-
-let trafficDataMonthly = {
-	labels: [
-		'16-22',
-		'23-29',
-		'30-5',
-		'6-12',
-		'13-19',
-		'20-26',
-		'27-3',
-		'4-10',
-		'11-17',
-		'18-24',
-		'25-31',
-	],
-	datasets: [
-		{
-			data: [700, 850, 1000, 1200, 500, 1450, 1600, 2500, 3000, 2000, 4000],
 			backgroundColor: 'rgba(116, 119, 191, .3)',
 			borderWidth: 1,
 		},
@@ -213,6 +137,7 @@ const user = document.getElementById('userField');
 const message = document.getElementById('messageField');
 const send = document.getElementById('send');
 
+// Creates Alerts for 'Message User' Section
 send.addEventListener('click', () => {
 	if (user.value === '' && message.value === '') {
 		alert('Please fill out user and message fields before sending');
