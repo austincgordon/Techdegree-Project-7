@@ -17,9 +17,8 @@ h4 {
 
 header {
 	grid-area: header;
-	display: grid;
-	grid-template-columns: 1.5fr 0.6fr auto;
-	grid-template-rows: auto;
+	display: flex;
+	flex-direction: row;
 	background-color: #7477bf;
 	color: #ffffff;
 }
@@ -28,7 +27,7 @@ header {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 100%;
+	grid-template-columns: 1fr;
 	grid-template-rows: auto;
 
 	grid-template-areas:
@@ -42,9 +41,9 @@ header {
 }
 
 .profile-img-container {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto;
+	flex-basis: auto;
+	display: flex;
+	justify-content: flex-end;
 	border-left: rgba(80, 78, 78, 0.5) 1px solid;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -52,16 +51,15 @@ header {
 }
 
 .profile-image {
+	align-self: center;
 	border-radius: 50%;
 	width: 32px;
 	height: 32px;
-	align-self: center;
-	justify-self: end;
 }
 
 .app-title {
-	justify-self: start;
-	align-self: center;
+	flex-grow: 2;
+	align-self: flex-start;
 	padding-left: 10px;
 	font-size: 22px;
 	font-weight: 100;
@@ -85,12 +83,11 @@ header {
 	align-items: center;
 	height: 100%;
 	width: 100%;
-	border-bottom: 4px solid rgb(3, 223, 3);
 }
 
 .profile-name {
+	margin: 0;
 	align-self: center;
-	justify-self: end;
 	padding-left: 8px;
 	padding-right: 10px;
 	font-size: 18px;
@@ -100,11 +97,13 @@ header {
 .main-container {
 	grid-area: main;
 	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
 }
 
 .widget-container-full,
 .widget-container-half {
-	width: 95vw;
+	width: 100vw;
 	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
 	padding-bottom: 10px;
 	padding-top: 10px;
@@ -112,7 +111,7 @@ header {
 
 .dashboard {
 	display: grid;
-	grid-template-columns: 160px 1.3fr;
+	grid-template-columns: 160px 1fr;
 	grid-template-rows: 60px 100px;
 	grid-template-areas:
 		'headline search'
@@ -155,7 +154,7 @@ header {
 	justify-self: end;
 	align-self: center;
 	border: 1px solid rgba(80, 78, 78, 0.3);
-	width: 250px;
+	width: 35vw;
 	height: 35px;
 	border-radius: 5px;
 }
@@ -170,7 +169,7 @@ header {
 	align-self: center;
 	background-color: #7477bf;
 	color: white;
-	height: 50px;
+	height: auto;
 	border-radius: 4px;
 	width: 95vw;
 }
@@ -207,7 +206,7 @@ header {
 
 .new-members-container {
 	display: grid;
-	grid-template-columns: 0.3fr 1.5fr 1fr;
+	grid-template-columns: 45px 1fr 85px;
 	grid-template-rows: 30px 30px;
 	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
 	margin-bottom: 5px;
@@ -221,8 +220,8 @@ header {
 
 .member-image {
 	border-radius: 50%;
-	width: 32px;
-	height: 32px;
+	width: 28px;
+	height: 28px;
 	grid-area: profile-image;
 	justify-self: center;
 	align-self: center;
@@ -230,6 +229,7 @@ header {
 
 .member-name {
 	grid-area: name;
+	font-size: 14px;
 	font-weight: 500;
 	justify-self: start;
 	align-self: center;
@@ -237,6 +237,7 @@ header {
 
 .member-email {
 	grid-area: email;
+	font-size: 14px;
 	color: #7477bf;
 	text-decoration: none;
 	justify-self: start;
@@ -245,6 +246,7 @@ header {
 
 .member-date {
 	grid-area: date;
+	font-size: 14px;
 	justify-self: center;
 	align-self: center;
 }
@@ -257,7 +259,7 @@ header {
 
 .activity-container {
 	display: grid;
-	grid-template-columns: 0.3fr 2fr 0.3fr;
+	grid-template-columns: 45px 1fr 45px;
 	grid-template-rows: 30px 30px;
 	border-bottom: 1px solid rgba(80, 78, 78, 0.2);
 	margin-bottom: 5px;
@@ -277,14 +279,16 @@ header {
 
 .activity-status {
 	grid-area: status;
+	font-size: 14px;
 	font-weight: 400;
-	line-height: 1.2;
+	line-height: 1.3;
 	justify-self: start;
 	align-self: center;
 }
 
 .activity-time {
 	grid-area: time;
+	font-size: 14px;
 	justify-self: start;
 	align-self: center;
 }
@@ -403,18 +407,28 @@ header {
 
 .send-email {
 	display: grid;
-	padding-left: 30px;
-	grid-template-columns: 0.8fr 1fr;
+	padding-left: 20px;
+	grid-template-columns: 185px 1fr;
 	grid-template-rows: auto;
 	align-items: center;
+	justify-items: center;
 }
 
 .set-profile {
 	display: grid;
-	padding-left: 30px;
-	grid-template-columns: 0.8fr 1fr;
+	padding-left: 20px;
+	grid-template-columns: 185px 1fr;
 	grid-template-rows: auto;
 	align-items: center;
+	justify-items: center;
+}
+
+.email-instruction {
+	justify-self: start;
+}
+
+.profile-instruction {
+	justify-self: start;
 }
 
 #timezone {
@@ -431,8 +445,8 @@ header {
 }
 
 .bell {
+	flex-basis: auto;
 	align-self: center;
-	justify-self: end;
 	margin: 0;
 	transition: transform 0.7s ease-in-out;
 	transform-origin: center;
@@ -473,7 +487,9 @@ header {
 
 .traffic-nav {
 	grid-area: nav;
-	padding-right: 15px;
+	font-size: 13px;
+	padding-right: 5px;
+	padding-left: 5px;
 	list-style-type: none;
 	justify-self: end;
 	align-self: center;
@@ -481,7 +497,7 @@ header {
 
 .traffic-nav-link {
 	display: inline;
-	padding: 6px 10px;
+	padding: 6px 5px;
 	text-align: center;
 }
 
@@ -534,14 +550,15 @@ header {
 	grid-area: social-icon;
 	background-color: #7477bf;
 	border-radius: 50%;
-	width: 75px;
-	height: 75px;
+	width: 60px;
+	height: 60px;
 	justify-self: center;
 	align-self: center;
 }
 
 .social-name {
 	grid-area: name;
+	font-size: 1em;
 	color: #7477bf;
 	display: inline;
 	align-self: flex-start;
@@ -552,7 +569,7 @@ header {
 	grid-area: stats;
 	color: rgba(68, 68, 68, 0.8);
 	font-weight: 300;
-	font-size: 45px;
+	font-size: 38px;
 	display: inline;
 	align-self: center;
 	justify-self: start;
@@ -569,14 +586,14 @@ header {
 	grid-area: twitter;
 	justify-self: center;
 	align-self: center;
-	width: 60vw;
+	width: 70vw;
 	padding: 12px 15px;
 	margin-bottom: 15px;
 	background-color: #fbfbfb;
 	border: 1px solid rgba(80, 78, 78, 0.2);
 
 	display: grid;
-	grid-template-columns: 0.8fr 1fr;
+	grid-template-columns: 0.7fr 1fr;
 	grid-template-rows: 35px 50px;
 
 	grid-template-areas:
@@ -588,14 +605,14 @@ header {
 	grid-area: facebook;
 	justify-self: center;
 	align-self: center;
-	width: 60vw;
+	width: 70vw;
 	padding: 12px 15px;
 	margin-bottom: 15px;
 	background-color: #fbfbfb;
 	border: 1px solid rgba(80, 78, 78, 0.2);
 
 	display: grid;
-	grid-template-columns: 0.8fr 1fr;
+	grid-template-columns: 0.7fr 1fr;
 	grid-template-rows: 35px 50px;
 
 	grid-template-areas:
@@ -607,14 +624,14 @@ header {
 	grid-area: google;
 	justify-self: center;
 	align-self: center;
-	width: 60vw;
+	width: 70vw;
 	padding: 12px 15px;
 	margin-bottom: 15px;
 	background-color: #fbfbfb;
 	border: 1px solid rgba(80, 78, 78, 0.2);
 
 	display: grid;
-	grid-template-columns: 0.8fr 1fr;
+	grid-template-columns: 0.7fr 1fr;
 	grid-template-rows: 35px 50px;
 
 	grid-template-areas:
@@ -683,22 +700,6 @@ header {
 	.daily {
 		border-right: rgba(80, 78, 78, 0.2) 1px solid;
 	}
-}
-
-@media (min-width: 1024px) {
-	.alert {
-		width: 95%;
-	}
-
-	.widget-container-full {
-		width: 100vw;
-		padding: 10px;
-	}
-
-	.widget-container-half {
-		width: 50vw;
-		padding: 10px;
-	}
 
 	.social-container {
 		grid-area: social-stats;
@@ -717,17 +718,33 @@ header {
 
 	.twitter-box {
 		grid-area: twitter-box;
-		width: 300px;
+		width: 30vw;
 	}
 
 	.facebook-box {
 		grid-area: facebook-box;
-		width: 300px;
+		width: 30vw;
 	}
 
 	.google-box {
 		grid-area: google-box;
-		width: 300px;
+		width: 30vw;
+	}
+}
+
+@media (min-width: 1024px) {
+	.alert {
+		width: 95%;
+	}
+
+	.widget-container-full {
+		width: 100vw;
+		padding: 10px;
+	}
+
+	.widget-container-half {
+		width: 50vw;
+		padding: 10px;
 	}
 
 	.members-and-activity {
